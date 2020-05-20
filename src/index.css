@@ -31,6 +31,7 @@ body {
 }
 
 .about-cat{
+  display: block;
   flex: 9;
   background: #f1f1f1;
   height: 1500px;
@@ -142,10 +143,11 @@ body {
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
-/*.topbar-icon{
-  border: 1px solid blue;
+.topbar-icon{
+  margin: 0px 10px;
+  display: inline;
 }
-*/
+
 
 .topbar-icon:hover ion-icon{
   color: #07ABA0;
@@ -271,6 +273,31 @@ color: #FB4FAF;
   margin: 15px 10px;
 }
 
+.input-bio{
+  margin: 15px 0;
+}
+
+.input-bio textarea{
+  width: 100%;
+  height: 50px;
+  background: #f1f1f1;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1.1em;
+  font-family: Lato;
+  color: #444;
+}
+
+.input-bio label{
+  width: 100%;
+  text-align: left !important;
+  float: left;
+  border-bottom: 4px;
+  font-family: 'Lato';
+  color: #333;
+}
+
 .input-custom{
   margin: 15px 0;
 }
@@ -334,7 +361,11 @@ color: #FB4FAF;
   .about-cat{
     display: none;
     margin-top: 58px;
-    margin-left: 518px;
+    right: 0px;
+    position: fixed;
+    z-index: 1000;
+    width: 250px;
+    height: 100%;
   }
   .view-cats{
     margin-left: 0px;

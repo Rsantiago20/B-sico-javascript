@@ -36,7 +36,8 @@ export const Topbar = () => {
             </div>
             {/* aboutPanel ? 'mostrar' : 'ocultar'*/}
             <div className="show-mobile">
-            <TopbarIcon onPress={ aboutPanelHandler } badge="6" name="notifications" />
+            <TopbarIcon onPress={ aboutPanelHandler } name="apps-sharp" />
+            <TopbarIcon badge="6" name="notifications" />
             </div>
         </div>
     )

@@ -6,8 +6,8 @@ export const Signup = () =>  (
         <form>
             <img src={Logo} />
             <h3>Sign Up</h3>
-            <input type="radio" name="gender" value="Male"></input>
-            <input type="radio" name="gender" value="Female"></input>
+            <input type="radio" name="gender" value="Female"></input><label>Female</label>
+            <input type="radio" name="gender" value="Male"></input><label>Male</label>
             <div className="input-custom">
                 <label>Name </label>
                 <input type="email"  />
@@ -17,18 +17,27 @@ export const Signup = () =>  (
                 <input type="password" />
             </div>
             <div className="input-custom">
+                <label>Birthday</label>
+                <input type="date" />
+            </div>
+            <div className="input-custom">
                 <label>Email</label>
                 <input type="password" />
             </div>
             <div className="input-custom">
                 <label>Cellphone</label>
                 <input type="password" />
-
+            </div>
+            <div className="input-bio">
+                <label>Bio</label>
+                <textarea></textarea>
             </div>
             <br />
+
             <div className="buttom-primary">
                 <input type="button" value="Sign Up"/>
             </div>
+            
         </form>
     </div>
 );
