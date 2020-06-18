@@ -1,23 +1,58 @@
-import React from 'react';
+import React, { useEffect, useState, Fragment } from 'react';
 import { Profile } from './Profile';
 import { ViewCats } from './ViewCats';
 import { AboutCat } from './AboutCat';
-import { ProfileContext, ProfileContextStore } from '../../Contexts/ProfileContext';
-import { AboutContext, AboutContextStore } from '../../Contexts/AboutContext';
-
+import { ProfileContextStore } from '../../Contexts/ProfileContext';
+import { HTTP_CONSTANTS } from '../../config/http-constants';
+import { requestHttp } from '../../config/http-server'
 
 export const Home = () => {
 
-    return (
+    const[cat, setCat] = useState ({})
 
+    const autologin = async() =>{
+        try{
+            const endpoint = HTTP_CONSTANTS.autologin
+            const response = await requestHttp('post', endpoint)
+            const { status, cat } = response
+            console.log(response)
+            if( status === 1) {
+
+                setCat(cat)
+            }else{
+                unauthorized()
+            }
+        }catch(err){
+            console.log(err)
+            unauthorized()
+        }
+    }
+
+    const unauthorized = () => {
+        sessionStorage.removeItem('_TOKEN_')
+        window.location.href = '/login'
+    }
+
+    useEffect(() => {
+        autologin()
+
+        return () => {}
+
+    }, [])
+
+    return (
         <div className="home-page">
-            <AboutContextStore>
             <ProfileContextStore>
-                <Profile />
-                <ViewCats />
-                <AboutCat />
+                {
+                    Object.keys(cat).length //false === 0
+                    ?<Fragment>
+                    <Profile bio={cat.bio} nick={cat.nick} image={cat.image} />
+                    <ViewCats />
+                    <AboutCat />
+                    </Fragment>
+                    : <p>Loading app...</p>
+                }
             </ProfileContextStore>
-            </AboutContextStore>
         </div>
     )
 }

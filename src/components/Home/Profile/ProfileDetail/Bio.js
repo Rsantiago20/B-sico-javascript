@@ -1,7 +1,7 @@
 import React from 'react'
 
-export const Bio = () => (
+export const Bio = ({ bio }) => (
     <p className="bio-text">
-        Soy un gatos travieso, que le gusta jugar, pelear en los techos y jugar con la arena
+        { bio }
     </p>
 )

@@ -11,12 +11,12 @@ export const Navigation = () => {
     
 
     const goBack = () => {
-        let newIndex = indexCat == 0 ? CAT_LIST.length -1 : indexCat -1
+        let newIndex = indexCat === 0 ? CAT_LIST.length -1 : indexCat -1
         setIndexCat( newIndex )
     }
 
     const goNext = () => {
-        let newIndex = indexCat == CAT_LIST.length -1 ? 0 : indexCat +1
+        let newIndex = indexCat === CAT_LIST.length -1 ? 0 : indexCat +1
         setIndexCat( newIndex )
     }
 

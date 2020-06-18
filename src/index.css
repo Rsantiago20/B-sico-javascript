@@ -43,7 +43,7 @@ body {
 /*          Intereses               */
 
 .interest-container{
-  margin: 30px 10px;
+  margin: 50px 10px;
 }
 
 .interest-container h3{
@@ -322,7 +322,7 @@ color: #FB4FAF;
   color: #444;
 }
 
-.buttom-primary  input {
+.button-primary  input {
   cursor: pointer;
   font-size: 1.15em;
   background: #07ABA0;
@@ -350,6 +350,19 @@ color: #FB4FAF;
 }
 .show-mobile{
   display: none;
+}
+
+.divider{
+  width: 5px;
+  height: 5px;
+  border: 1px solid #ccc;
+  margin: 0px 15px;
+}
+
+.form-preferences label {
+  font-family: 'Lato';
+  font-size: 1.1em;
+  color: #333;
 }
 
 /* ipad size */
